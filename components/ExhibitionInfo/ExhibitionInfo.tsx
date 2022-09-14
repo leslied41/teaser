@@ -40,7 +40,7 @@ const ExhibitionInfo: FC<Props> = ({ className }) => {
           <p>8 — 30·10·2022</p>
           <p>
             {router.locale === "en"
-              ? "4/F, Pao Gallery"
+              ? "4/F, Pao Galleries"
               : "香港藝術中心四樓包氏畫廊"}
           </p>
           {router.locale === "en" && <p>Hong Kong Arts Centre</p>}

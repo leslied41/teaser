@@ -13,6 +13,5 @@ export const sponsors = [
 ];
 
 export const curators = [
-  { name_en: "Koon Wai Bong", name_cn: "管偉邦" },
   { name_en: "Ting Wing Yan, Vivian", name_cn: "丁穎茵" },
 ];
