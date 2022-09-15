@@ -78,7 +78,7 @@ const ExhibitionInfo: FC<Props> = ({ className }) => {
         </div>
         <div>
           <p className="text-sm">
-            {router.locale === "en" ? "Curators" : "策展人"}
+            {router.locale === "en" ? "Curator" : "策展人"}
           </p>
           {curators.map((i, index) => (
             <p key={index}>{router.locale === "en" ? i.name_en : i.name_cn}</p>
