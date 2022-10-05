@@ -8,3 +8,4 @@ export {
   SubtitleCnMobile,
   SubtitleEnMobile,
 } from "./landingTitle";
+export { default as CloseIcon } from "./closeIcon";

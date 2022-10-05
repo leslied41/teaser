@@ -1,20 +1,21 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
-import type { NextPage } from "next";
 import ExhibitionInfo from "../components/ExhibitionInfo";
 import TitleAndSubtitle from "../components/TitleAndSubtitle";
 import LocaleSwitch from "../components/LocaleSwitch";
 import ProgressBar from "../components/progressBar/";
 import VideoBg from "../components/videoBg";
+import { Layout } from "../components/common";
 import { data } from "../components/TitleAndSubtitle/data";
 import { useRouter } from "next/router";
 import cn from "clsx";
 var debounce = require("lodash.debounce");
 
-const Home: NextPage = () => {
+const Home = () => {
   const [update, setUpdate] = useState(false);
   const indexRef = useRef<number>(0);
   const touchStartPositionRef = useRef<number>();
   const currentPositionRef = useRef<number>();
+  const landingPageRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
   const wheel = (e: WheelEvent) => {
@@ -82,25 +83,36 @@ const Home: NextPage = () => {
   );
 
   useEffect(() => {
+    if (!landingPageRef.current) return;
     const debounceFn = debounce(wheel, 35);
     const debounceTouchMove = debounce(handleTouchMove, 50);
-    window.addEventListener("wheel", debounceFn);
-    window.addEventListener("touchstart", handleTouchStart);
-    window.addEventListener("touchmove", debounceTouchMove);
-    window.addEventListener("touchend", handleTouchEnd);
+    landingPageRef.current.addEventListener("wheel", debounceFn);
+    landingPageRef.current.addEventListener("touchstart", handleTouchStart);
+    landingPageRef.current.addEventListener("touchmove", debounceTouchMove);
+    landingPageRef.current.addEventListener("touchend", handleTouchEnd);
 
     return () => {
-      window.removeEventListener("wheel", debounceFn);
-      window.removeEventListener("touchstart", handleTouchStart);
-      window.removeEventListener("touchmove", debounceTouchMove);
-      window.removeEventListener("touchend", handleTouchEnd);
+      if (!landingPageRef.current) return;
+      landingPageRef.current.removeEventListener("wheel", debounceFn);
+      landingPageRef.current.removeEventListener(
+        "touchstart",
+        handleTouchStart
+      );
+      landingPageRef.current.removeEventListener(
+        "touchmove",
+        debounceTouchMove
+      );
+      landingPageRef.current.removeEventListener("touchend", handleTouchEnd);
     };
   }, []);
 
   return (
-    <div className="absolute inset-0 w-full">
+    <div
+      className="absolute inset-0 w-full overflow-hidden "
+      ref={landingPageRef}
+    >
       <ExhibitionInfo
-        className={cn("fixed top-[60px] left-2 sm:top-[75px] sm:left-3", {
+        className={cn("absolute top-[60px] left-2 sm:top-[75px] sm:left-3", {
           ["!top-[88px]"]: router.locale === "en",
         })}
       />
@@ -109,14 +121,14 @@ const Home: NextPage = () => {
           return (
             <TitleAndSubtitle
               key={i}
-              className={cn("fixed bottom-0 left-0")}
+              className={cn("absolute bottom-0 left-0")}
               obj={data[indexRef.current]}
               order={i}
             />
           );
       })}
       <ProgressBar
-        className="fixed top-2 sm:top-3 w-full"
+        className="absolute top-2 sm:top-3 w-full"
         index={indexRef.current}
       />
       <LocaleSwitch />
@@ -129,5 +141,5 @@ const Home: NextPage = () => {
     </div>
   );
 };
-
+Home.Layout = Layout;
 export default Home;

@@ -13,6 +13,7 @@ module.exports = {
         "m-cn": ["16px", "20px"],
         base: ["12px", "12px"],
         "base-cn": ["12px", "16px"],
+        main: ["24px", "24px"],
         lg: ["32px", "32px"],
         ml: ["43px", "43px"],
         xl: ["56px", "56px"],
