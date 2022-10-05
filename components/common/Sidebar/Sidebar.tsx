@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useRef } from "react";
 import { useGlobalContext } from "../index";
 import { CloseIcon } from "../../icons";
 import { ActivityCard, ActivityData } from "../index";
@@ -8,6 +8,7 @@ import cn from "clsx";
 
 const Sidebar = () => {
   const { openSidebar, setOpenSidebar } = useGlobalContext();
+  const sidebarRef = useRef<HTMLElement>(null);
   const closeSidebar = () => setOpenSidebar!(false);
   const isEn = useLocale();
 
@@ -22,9 +23,15 @@ const Sidebar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (!sidebarRef.current) return;
+    if (!openSidebar) sidebarRef.current.scrollTo(0, 0);
+  }, [openSidebar]);
+
   return (
     <aside
       id="sidebar"
+      ref={sidebarRef}
       className={cn(
         "fixed inset-0 z-20   bg-white overflow-y-scroll transition-all",
         {
