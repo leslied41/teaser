@@ -35,8 +35,21 @@ const SidebarFooter: FC<Props> = ({ className }) => {
             {isEn ? "Co-presented by" : "呈獻"}
           </h3>
           <div className="flex items-center  gap-x-[25px] sm:gap-x-[50px] mt-6">
-            <img src="images/footer/logo-1.png" alt="logo-1" />
-            <img src="images/footer/logo-2.png" alt="logo-2" />
+            <figure>
+              {" "}
+              <img
+                src="images/footer/logo-1.png"
+                alt="logo-1"
+                className="object-contain"
+              />
+            </figure>
+            <figure>
+              <img
+                src="images/footer/logo-2.png"
+                alt="logo-2"
+                className="object-contain"
+              />
+            </figure>
           </div>
           <p className="text-m mt-6 sm:mt-[50px]">
             {isEn
@@ -49,11 +62,25 @@ const SidebarFooter: FC<Props> = ({ className }) => {
             {isEn ? "supported by" : "支持"}
           </h3>
           <div className="mt-6 sm:mt-4">
-            <img src="images/footer/logo-3.png" alt="logo-3" />
+            <figure>
+              <img src="images/footer/logo-3.png" alt="logo-3" />
+            </figure>
           </div>
           <div className="flex mt-6 sm:mt-4 items-center gap-x-[25px] sm:gap-x-[50px]">
-            <img src="images/footer/logo-4.png" alt="logo-4" />
-            <img src="images/footer/logo-5.png" alt="logo-5" />
+            <figure>
+              <img
+                src="images/footer/logo-4.png"
+                alt="logo-4"
+                className="object-contain"
+              />
+            </figure>
+            <figure>
+              <img
+                src="images/footer/logo-5.png"
+                alt="logo-5"
+                className="object-contain"
+              />
+            </figure>
           </div>
         </section>
         <section aria-labelledby="Sponsored by" className="mt-6 sm:mt-[50px]">
@@ -61,12 +88,36 @@ const SidebarFooter: FC<Props> = ({ className }) => {
             {isEn ? "Sponsored by" : "贊助"}
           </h3>
           <div className="mt-6  flex gap-x-[25px] sm:gap-x-[50px]">
-            <img src="images/footer/logo-6.png" alt="logo-6" />
-            <img src="images/footer/logo-7.png" alt="logo-7" />
+            <figure>
+              <img
+                src="images/footer/logo-6.png"
+                alt="logo-6"
+                className="object-contain"
+              />
+            </figure>
+            <figure>
+              <img
+                src="images/footer/logo-7.png"
+                alt="logo-7"
+                className="object-contain"
+              />
+            </figure>
           </div>
           <div className="flex mt-6 items-center gap-x-[25px] sm:gap-x-[50px]">
-            <img src="images/footer/logo-8.png" alt="logo-8" />
-            <img src="images/footer/logo-9.png" alt="logo-9" />
+            <figure>
+              <img
+                src="images/footer/logo-8.png"
+                alt="logo-8"
+                className="object-contain"
+              />
+            </figure>
+            <figure>
+              <img
+                src="images/footer/logo-9.png"
+                alt="logo-9"
+                className="object-contain"
+              />
+            </figure>
           </div>
           <div className="mt-6">
             <ul className="text-m">
