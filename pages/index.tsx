@@ -4,6 +4,7 @@ import TitleAndSubtitle from "../components/TitleAndSubtitle";
 import LocaleSwitch from "../components/LocaleSwitch";
 import ProgressBar from "../components/progressBar/";
 import VideoBg from "../components/videoBg";
+import SEO from "../components/common/SEO";
 import { Layout } from "../components/common";
 import { data } from "../components/TitleAndSubtitle/data";
 import { useRouter } from "next/router";
@@ -107,36 +108,39 @@ const Home = () => {
   }, []);
 
   return (
-    <div
-      className="absolute inset-0 w-full overflow-hidden "
-      ref={landingPageRef}
-    >
-      <ExhibitionInfo
-        className={cn("absolute top-[26px] sm:top-8 left-2  sm:left-3")}
-      />
-      {data.map((item, i) => {
-        if (i === indexRef.current)
-          return (
-            <TitleAndSubtitle
-              key={i}
-              className={cn("absolute bottom-0 left-0")}
-              obj={data[indexRef.current]}
-              order={i}
-            />
-          );
-      })}
-      <ProgressBar
-        className="absolute top-2 sm:top-3 w-full"
-        index={indexRef.current}
-      />
-      <LocaleSwitch />
-      <VideoBg
-        index={indexRef.current}
-        updateIndexRef={updateIndexRef}
-        setUpdate={setUpdate}
-        update={update}
-      />
-    </div>
+    <>
+      <SEO />
+      <div
+        className="absolute inset-0 w-full overflow-hidden "
+        ref={landingPageRef}
+      >
+        <ExhibitionInfo
+          className={cn("absolute top-[26px] sm:top-8 left-2  sm:left-3")}
+        />
+        {data.map((item, i) => {
+          if (i === indexRef.current)
+            return (
+              <TitleAndSubtitle
+                key={i}
+                className={cn("absolute bottom-0 left-0")}
+                obj={data[indexRef.current]}
+                order={i}
+              />
+            );
+        })}
+        <ProgressBar
+          className="absolute top-2 sm:top-3 w-full"
+          index={indexRef.current}
+        />
+        <LocaleSwitch />
+        <VideoBg
+          index={indexRef.current}
+          updateIndexRef={updateIndexRef}
+          setUpdate={setUpdate}
+          update={update}
+        />
+      </div>
+    </>
   );
 };
 Home.Layout = Layout;

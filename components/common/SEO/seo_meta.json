@@ -1,0 +1,25 @@
+{
+  "title": "Hear and There",
+  "titleTemplate": "%s - Hear and There",
+  "description": "Hear and There Exhibition",
+  "openGraph": {
+    "title": "Hear and There",
+    "description": "Hear and There",
+    "type": "website",
+    "url": "https://hereandthere.hk/",
+    "site_name": "Hear and There",
+    "images": [
+      {
+        "url": "/card.png",
+        "width": "800",
+        "height": "600",
+        "alt": "Hear and There"
+      }
+    ]
+  },
+  "twitter": {
+    "handle": "Hear and There",
+    "site": "Hear and There",
+    "cardType": "summary_large_image"
+  }
+}
