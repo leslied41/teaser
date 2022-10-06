@@ -112,9 +112,7 @@ const Home = () => {
       ref={landingPageRef}
     >
       <ExhibitionInfo
-        className={cn("absolute top-[60px] left-2 sm:top-[75px] sm:left-3", {
-          ["!top-[88px]"]: router.locale === "en",
-        })}
+        className={cn("absolute top-[26px] sm:top-8 left-2  sm:left-3")}
       />
       {data.map((item, i) => {
         if (i === indexRef.current)

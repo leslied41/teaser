@@ -51,11 +51,18 @@ const SidebarFooter: FC<Props> = ({ className }) => {
               />
             </figure>
           </div>
-          <p className="text-m mt-6 sm:mt-[50px]">
-            {isEn
-              ? "Highlighted Programme of Hong Kong Arts Centre's 45th Anniversary Celebration This project is sponsored by the Research Grants Council under project number 12606618"
-              : "香港藝術中心四十五週年誌慶重點節目 此項目乃研究資助局資助項目，項目編號為12606618"}
-          </p>
+          <div className="text-m mt-6 sm:mt-[50px]">
+            <p>
+              {isEn
+                ? "Highlighted Programme of Hong Kong Arts Centre's 45th Anniversary Celebration"
+                : "香港藝術中心四十五週年誌慶重點節目"}
+            </p>
+            <p>
+              {isEn
+                ? "This project is sponsored by the Research Grants Council under project number 12606618"
+                : "此項目乃研究資助局資助項目，項目編號為12606618"}
+            </p>
+          </div>
         </section>
         <section aria-labelledby="supported by" className="mt-6 sm:mt-[50px]">
           <h3 className="text-m text-title-color uppercase" id="supported by">

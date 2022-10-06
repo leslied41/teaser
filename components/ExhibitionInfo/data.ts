@@ -15,3 +15,12 @@ export const sponsors = [
 export const curators = [
   { name_en: "Ting Wing Yan, Vivian", name_cn: "丁穎茵" },
 ];
+
+export const artists = [
+  { name_en: "Ho Yuen Leung", name_cn: "何遠良" },
+  { name_en: "Koon Wai Bong", name_cn: "管偉邦" },
+  { name_en: "Lam Tung Pang", name_cn: "林東鵬" },
+  { name_en: "Leung Ka Yin, Joey", name_cn: "梁嘉賢" },
+  { name_en: "Wong Chun Hei, Stephen", name_cn: "黃進曦" },
+  { name_en: "Wong Lai Ching, Fiona", name_cn: "黃麗貞" },
+];
