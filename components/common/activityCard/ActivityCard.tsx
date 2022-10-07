@@ -72,9 +72,15 @@ const ActivityCard = ({ singleActivity }: ActivityCardProps) => {
               </li>
             ))}
       </div>
-      <button className="mt-4 uppercase text-m p-2 text-title-color border-title-color border-[1px] hover:opacity-70">
+
+      <a
+        href={singleActivity.registeration_link}
+        target="_blank"
+        rel="noreferrer"
+        className="inline-block mt-4 uppercase text-m p-2 text-title-color border-title-color border-[1px] hover:opacity-70"
+      >
         {isEn ? "registration" : "註冊參加"}
-      </button>
+      </a>
     </article>
   );
 };

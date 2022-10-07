@@ -81,7 +81,7 @@ const ExhibitionInfo: FC<Props> = ({ className }) => {
           </p>
         </div> */}
         <div className="mix-blend-exclusion">
-          <p>{isEn ? "Curator" : "策展人"}</p>
+          <p>{isEn ? "Artists" : "藝術家"}</p>
           {artists.map((i) => (
             <p key={i.name_en}>{isEn ? i.name_en : i.name_cn}</p>
           ))}

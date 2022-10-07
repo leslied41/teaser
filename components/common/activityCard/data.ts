@@ -25,6 +25,7 @@ export type SingleActivity = {
   };
   details: string[];
   details_cn: string[];
+  registeration_link: string;
 };
 
 export const data = [
@@ -60,6 +61,7 @@ export const data = [
       "No audience limited online",
     ],
     details_cn: ["費用全免", "粵語", "30 人 (現場參與)", "網上參與人數不拘"],
+    registeration_link: "https://forms.gle/zKMke1dNQqGEYkDC9",
   },
   {
     id: 1,
@@ -93,6 +95,7 @@ export const data = [
       "No audience limited online",
     ],
     details_cn: ["費用全免", "粵語", "30 人 (現場參與)", "網上參與人數不拘"],
+    registeration_link: "https://forms.gle/UpkcFjKLAjHM4gZr7",
   },
   {
     id: 2,
@@ -121,6 +124,7 @@ export const data = [
       "No audience limited online",
     ],
     details_cn: ["費用全免", "粵語", "30 人 (現場參與)", "網上參與人數不拘"],
+    registeration_link: "https://forms.gle/BZhgbe3hNmfXADFs7",
   },
   {
     id: 3,
@@ -149,6 +153,7 @@ export const data = [
     },
     details: ["Admission Fee: $100", "Cantonese", "15 peoples"],
     details_cn: ["費用：$100", "粵語", "15人"],
+    registeration_link: "https://forms.gle/cPU3PVxWuzpvnoJZ8",
   },
   {
     id: 4,
@@ -177,5 +182,6 @@ export const data = [
     },
     details: ["Admission Fee: $100", "Cantonese", "15 peoples"],
     details_cn: ["費用：$100", "粵語", "15人"],
+    registeration_link: "https://forms.gle/cPU3PVxWuzpvnoJZ8",
   },
 ];
